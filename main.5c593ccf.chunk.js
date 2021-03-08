@@ -117,13 +117,13 @@
                 v = (a(607), a(161)),
                 w = a(70);
             const b = {
-                cooks: "Cookbooks",
-                database: "Database",
-                fairy: "Fairy Tales",
-                scifi: "Science Fiction",
+                books: "Books",
+                clothes: "Clothes",
+                computers: "Computers",
+                cards: "Gift Cards",
                 home: "Home Improvement",
-                cars: "Cars",
-                woodwork: "Woodwork"
+                phones: "Phones",
+                tv: "TV"
             };
             a(608);
             class C extends s.a.Component {
@@ -187,9 +187,9 @@
                         className: "col-md-4 title-padding"
                     }, s.a.createElement("h3", {
                         className: "no-margin white"
-                    }, "Best", s.a.createElement("span", {
+                    }, "", s.a.createElement("span", {
                         className: "orange"
-                    }, " deals "), "of the day"))))
+                    }, ""), ""))))
                 }
             }
             var I = a(103),
@@ -404,7 +404,7 @@
                         className: "col-md-2 hidden-sm hidden-xs"
                     }, s.a.createElement(u.LinkContainer, {
                         to: "/best"
-                    }, s.a.createElement(g.a, null, s.a.createElement("h3", null, "Bookstore", s.a.createElement("br", null), "Best Sellers")))), s.a.createElement("div", {
+                    }, s.a.createElement(g.a, null, s.a.createElement("h3", null, "Store", s.a.createElement("br", null), "Best Sellers")))), s.a.createElement("div", {
                         className: "row"
                     }, re.map(e => s.a.createElement("div", {
                         className: "col-md-2 hidden-sm hidden-xs",
@@ -700,7 +700,7 @@
                         className: "well-bs no-padding-top col-md-12 no-border"
                     }, s.a.createElement("div", {
                         className: "container-category"
-                    }, s.a.createElement("h3", null, "Books your friends have bought")), this.state.recommendations.slice(0, 5).map(e => s.a.createElement(Oe, {
+                    }, s.a.createElement("h3", null, "Items your friends have bought")), this.state.recommendations.slice(0, 5).map(e => s.a.createElement(Oe, {
                         bookId: e.bookId,
                         key: e.bookId
                     })))
@@ -748,53 +748,7 @@
                         src: Y.a,
                         className: "img-fluid full-width",
                         alt: "Screenshot"
-                    }), s.a.createElement("div", {
-                        className: "product-section"
-                    }, s.a.createElement("h1", null, ""), s.a.createElement("hr", null), s.a.createElement("h2", null, ""), s.a.createElement("div", {
-                        className: "col-md-12"
-                    }, s.a.createElement("p", null, ""))), s.a.createElement("div", {
-                        className: "product-section"
-                    }, s.a.createElement("div", {
-                        className: "col-md-12"
-                    }, s.a.createElement("hr", null), s.a.createElement("h3", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/dynamodb/"
-                    }, "Amazon DynamoDB")), s.a.createElement("h4", null, "NoSQL Database"), s.a.createElement("p", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/dynamodb/"
-                    }, "Amazon DynamoDB"), " is a fast and flexible ", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/nosql/"
-                    }, "NoSQL database service"), ""), s.a.createElement("p", null, "For more information visit the ", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/dynamodb/"
-                    }, "Amazon DynamoDB product page."))), s.a.createElement("div", {
-                        className: "col-md-12"
-                    }, s.a.createElement("hr", null), s.a.createElement("h3", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/neptune/"
-                    }, "Amazon Neptune")), s.a.createElement("h4", null, ""), s.a.createElement("p", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/neptune/"
-                    }, "Amazon Neptune"), "", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/nosql/graph/"
-                    }, "graph database"), ""), s.a.createElement("p", null, "", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/neptune/"
-                    }, "Amazon Neptune product page."))), s.a.createElement("div", {
-                        className: "col-md-12"
-                    }, s.a.createElement("hr", null), s.a.createElement("h3", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/elasticache/"
-                    }, "Amazon ElastiCache")), s.a.createElement("h4", null, "In-Memory Data Store"), s.a.createElement("p", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/elasticache/"
-                    }, "Amazon ElastiCache"), " makes it easy to deploy, operate, and scale an ", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/nosql/key-value/"
-                    }, "in-memory data store"), " or cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases. ElastiCache for Redis offers fully managed Redis and ElastiCache for Memcached offers fully managed ", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/memcached/"
-                    }, "Memcached"), "in the cloud."), s.a.createElement("p", null, "For more information visit the  ", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/elasticache/"
-                    }, "Amazon ElastiCache product page."))), s.a.createElement("div", {
-                        className: "col-md-12"
-                    }, s.a.createElement("hr", null), s.a.createElement("h3", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/elasticsearch-service/"
-                    }, "Amazon Elasticsearch Service")), s.a.createElement("h4", null, "Fully managed, scalable, and reliable Elasticsearch service"), s.a.createElement("p", null, s.a.createElement("a", {
-                        href: "https://aws.amazon.com/elasticsearch-service/"
-                    }, "Amazon Elasticsearch Service"), " is a fully managed service that makes it easy for you to deploy, secure, operate, and scale Elasticsearch to search, analyze, and visualize data in real-time. With Amazon Elasticsearch Service you get easy-to-use APIs and real-time analytics capabilities to power use-cases such as log analytics, full-text search, application monitoring, and clickstream analytics, with enterprise-grade availability, scalability, and security. The service offers integrations with open-source tools like Kibana and Logstash for data ingestion and visualization. It also integrates seamlessly with other AWS services such as Amazon Virtual Private Cloud (VPC), AWS Key Management Service (KMS), Amazon Kinesis Data Firehose, AWS Lambda, AWS Identity and Access Management Service (IAM), Amazon Cognito, and Amazon CloudWatch, so you can go from data to actionable insights quickly and securely."), s.a.createElement("p", null, "For more information visit the ", s.a.createElement("a", {
-                        href: "https://aws.amazon.com/elasticsearch-service/"
-                    }, "Amazon Elasticsearch Service product page.")))))
+                    }),)
                 }
                 renderHome() {
                     return s.a.createElement("div", {
@@ -1172,19 +1126,19 @@
                 constructor(...e) {
                     super(...e), this.getImage = () => {
                         switch (this.props.match.params.id) {
-                            case b.cooks:
+                            case b.clothes:
                                 return qe.a;
-                            case b.database:
+                            case b.computers:
                                 return Xe.a;
-                            case b.fairy:
+                            case b.cards:
                                 return Re.a;
-                            case b.scifi:
-                                return tt.a;
                             case b.home:
+                                return tt.a;
+                            case b.phones:
                                 return $e.a;
-                            case b.cars:
+                            case b.tv:
                                 return Ke.a;
-                            case b.woodwork:
+                            case b.books:
                                 return nt.a;
                             default:
                                 return qe.a
@@ -1767,6 +1721,10 @@
                 exact: !0,
                 component: dt
             }), s.a.createElement(w.a, {
+                path: "/support",
+                exact: !0,
+                component: dt
+            }), s.a.createElement(w.a, {
                 path: "/cart",
                 exact: !0,
                 component: ot
@@ -1817,6 +1775,10 @@
                     }, s.a.createElement(g.a, null, s.a.createElement("span", {
                         className: "orange line-height-24"
                     }, "Past orders"))), s.a.createElement(u.LinkContainer, {
+                        to: "https://support.octank.ab3.live/"
+                    }, s.a.createElement(g.a, null, s.a.createElement("span", {
+                        className: "orange line-height-24"
+                    }, "Support"))), s.a.createElement(u.LinkContainer, {
                         to: "/best"
                     }, s.a.createElement(g.a, null, s.a.createElement("span", {
                         className: "orange line-height-24"
@@ -1891,8 +1853,8 @@
                         className: "orange"
                     }, " ", s.a.createElement("img", {
                         src: "",
-                        alt: "octankstore"
-                    }), " OcTankStore"))), s.a.createElement(E.a.Toggle, null)), s.a.createElement(E.a.Collapse, null, s.a.createElement(A.a, {
+                        alt: ""
+                    }), " OcTankStore North America"))), s.a.createElement(E.a.Toggle, null)), s.a.createElement(E.a.Collapse, null, s.a.createElement(A.a, {
                         pullRight: !0
                     }, this.state.isAuthenticated ? this.showLoggedInBar() : this.showLoggedOutBar()))), s.a.createElement(At, {
                         isAuthenticated: e.isAuthenticated,
