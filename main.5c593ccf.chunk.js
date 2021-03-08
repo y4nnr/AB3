@@ -11,7 +11,7 @@
             e.exports = a.p + "static/media/pastOrders.9fa03bfe.png"
         },
         176: function(e, t, a) {
-            e.exports = a.p + "static/media/screenshot.e45e4325.png"
+            e.exports = a.p + "static/media/screenshot.e45e4325.pnga"
         },
         177: function(e, t, a) {
             e.exports = a.p + "static/media/yourpastorders.76f37cd9.png"
@@ -709,7 +709,7 @@
                 renderLanding() {
                     return s.a.createElement("div", {
                         className: "lander"
-                    }, s.a.createElement("h1", null, "North America"), s.a.createElement("hr", null), s.a.createElement("p", null, ""), s.a.createElement("div", {
+                    }, s.a.createElement("h1", null, "Website built for AB3"), s.a.createElement("hr", null), s.a.createElement("p", null, ""), s.a.createElement("div", {
                         className: "button-container col-md-12"
                     }, s.a.createElement(u.LinkContainer, {
                         to: "/signup"
@@ -724,36 +724,7 @@
                 renderHome() {
                     return s.a.createElement("div", {
                         className: "bookstore"
-                    }, s.a.createElement(U, null), s.a.createElement(M, null), s.a.createElement(C, null), s.a.createElement(oe, null), s.a.createElement("div", {
-                        className: "well-bs col-md-12 ad-container-padding"
-                    }, s.a.createElement("div", {
-                        className: "col-md-4 ad-padding"
-                    }, s.a.createElement("div", {
-                        className: "container-category no-padding"
-                    }, s.a.createElement(u.LinkContainer, {
-                        to: "/past"
-                    }, s.a.createElement("img", {
-                        src: P.a,
-                        alt: "Past orders"
-                    })))), s.a.createElement("div", {
-                        className: "col-md-4 ad-padding"
-                    }, s.a.createElement("div", {
-                        className: "container-category no-padding"
-                    }, s.a.createElement(u.LinkContainer, {
-                        to: "/cart"
-                    }, s.a.createElement("img", {
-                        src: G.a,
-                        alt: "Shopping cart"
-                    })))), s.a.createElement("div", {
-                        className: "col-md-4 ad-padding"
-                    }, s.a.createElement("div", {
-                        className: "container-category no-padding"
-                    }, s.a.createElement(u.LinkContainer, {
-                        to: "/best"
-                    }, s.a.createElement("img", {
-                        src: Q.a,
-                        alt: "Best sellers"
-                    }))))), s.a.createElement(he, null), s.a.createElement(Qe, null))
+                    }, s.a.createElement(U, null), s.a.createElement(M, null), s.a.createElement(C, null), s.a.createElement(oe, null),)
                 }
                 render() {
                     return s.a.createElement("div", {
