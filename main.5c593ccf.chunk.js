@@ -718,13 +718,13 @@
                     }, "Sign up to access OcTank Store"))), s.a.createElement("img", {
                         src: Y.a,
                         className: "img-fluid full-width",
-                        alt: "Screenshot"
+                        alt: ""
                     }),)
                 }
                 renderHome() {
                     return s.a.createElement("div", {
                         className: "bookstore"
-                    }, s.a.createElement(U, null), s.a.createElement(M, null), s.a.createElement(C, null), s.a.createElement(oe, null),)
+                    }, s.a.createElement(U, null), s.a.createElement(M, null), s.a.createElement(C, null), s.a.createElement(oe, null),)  
                 }
                 render() {
                     return s.a.createElement("div", {
@@ -1796,7 +1796,7 @@
                     }, " ", s.a.createElement("img", {
                         src: "",
                         alt: ""
-                    }), " OcTankStore North America"))), s.a.createElement(E.a.Toggle, null)), s.a.createElement(E.a.Collapse, null, s.a.createElement(A.a, {
+                    }), " OcTank Store North America"))), s.a.createElement(E.a.Toggle, null)), s.a.createElement(E.a.Collapse, null, s.a.createElement(A.a, {
                         pullRight: !0
                     }, this.state.isAuthenticated ? this.showLoggedInBar() : this.showLoggedOutBar()))), s.a.createElement(At, {
                         isAuthenticated: e.isAuthenticated,
