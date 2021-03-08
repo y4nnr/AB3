@@ -398,23 +398,7 @@
             const re = [F.a, Z.a, _.a, ee.a, ae.a, se.a];
             class oe extends s.a.Component {
                 render() {
-                    return s.a.createElement("div", {
-                        className: "center ad-gallery nav"
-                    }, s.a.createElement("div", {
-                        className: "col-md-2 hidden-sm hidden-xs"
-                    }, s.a.createElement(u.LinkContainer, {
-                        to: "/best"
-                    }, s.a.createElement(g.a, null, s.a.createElement("h3", null, "Store", s.a.createElement("br", null), "Best Sellers")))), s.a.createElement("div", {
-                        className: "row"
-                    }, re.map(e => s.a.createElement("div", {
-                        className: "col-md-2 hidden-sm hidden-xs",
-                        key: e
-                    }, s.a.createElement(u.LinkContainer, {
-                        to: "/best"
-                    }, s.a.createElement(g.a, null, s.a.createElement("img", {
-                        src: e,
-                        className: "thumbs"
-                    })))))))
+                    return null
                 }
             }
             var ce = a(174);
@@ -554,20 +538,7 @@
                     return d.a.get("books", "/books?category=Cookbooks", null)
                 }
                 render() {
-                    return this.state.isLoading ? s.a.createElement("div", {
-                        className: "loader"
-                    }) : s.a.createElement("div", null, s.a.createElement("div", {
-                        className: "well-bs no-padding-top col-md-12 no-radius"
-                    }, s.a.createElement("div", {
-                        className: "container-category"
-                    }, s.a.createElement("h3", null, "Cookbooks ", s.a.createElement("small", null, s.a.createElement(u.LinkContainer, {
-                        to: "/category/Cookbooks"
-                    }, s.a.createElement("a", null, "Browse cookbooks")))), s.a.createElement("div", {
-                        className: "row"
-                    }, this.state.books.slice(0, 4).map(e => s.a.createElement(pe, {
-                        book: e,
-                        key: e.id
-                    }))))))
+                    return null
                 }
             }
             a(66);
@@ -1774,7 +1745,7 @@
                         to: "/past"
                     }, s.a.createElement(g.a, null, s.a.createElement("span", {
                         className: "orange line-height-24"
-                    }, "Past orders"))), s.a.createElement(u.LinkContainer, {
+                    }, "My account"))), s.a.createElement(u.LinkContainer, {
                         to: "https://support.octank.ab3.live/"
                     }, s.a.createElement(g.a, null, s.a.createElement("span", {
                         className: "orange line-height-24"
