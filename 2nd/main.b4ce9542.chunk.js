@@ -2034,11 +2034,11 @@
                             }, r.a.createElement(b.a, null, r.a.createElement("span", {
                                 className: "orange line-height-24"
                             }, "My account"))), r.a.createElement(E.LinkContainer, {
-                                to: "https://support.octank.ab3.live/"
+                                to: "http://support.octank.ab3.live/"
                             }, r.a.createElement(b.a, null, r.a.createElement("span", {
                                 className: "orange line-height-24"
                             }, "Support"))), r.a.createElement(E.LinkContainer, {
-                                to: "https://dashboard.octank.ab3.live/"
+                                to: "http://dashboard.octank.ab3.live/"
                             }, r.a.createElement(b.a, null, r.a.createElement("span", {
                                 className: "orange line-height-24"
                             }, "Dashboard"))), r.a.createElement(E.LinkContainer, {

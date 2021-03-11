@@ -1712,11 +1712,11 @@
                     }, s.a.createElement(g.a, null, s.a.createElement("span", {
                         className: "orange line-height-24"
                     }, "My account"))), s.a.createElement(u.LinkContainer, {
-                        to: "https://support.octank.ab3.live/"
+                        to: "http://support.octank.ab3.live/"
                     }, s.a.createElement(g.a, null, s.a.createElement("span", {
                         className: "orange line-height-24"
                     }, "Support"))), s.a.createElement(u.LinkContainer, {
-                        to: "https://dashboard.octank.ab3.live/"
+                        to: "http://dashboard.octank.ab3.live/"
                     }, s.a.createElement(g.a, null, s.a.createElement("span", {
                         className: "orange line-height-24"
                     }, "Dashboard"))), s.a.createElement(u.LinkContainer, {
