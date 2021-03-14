@@ -2,7 +2,10 @@ from flask import Flask, render_template, request
 import flask_resize
 import redis
 import time
+import os
 import boto3
+
+boto3.set_stream_logger('botocore', level='DEBUG')
 
 w = redis.Redis(host='oktank-cluster.wraqgj.0001.usw2.cache.amazonaws.com', port=6379, db=0, charset="utf-8", decode_responses=True)
 r = redis.Redis(host='oktank-cluster.wraqgj.0001.usw2.cache.amazonaws.com', port=6379, db=0, charset="utf-8", decode_responses=True)
@@ -21,6 +24,9 @@ def get_hit_count():
             retries -= 1
             time.sleep(0.5)
 
+
+#TOP 10 All Time North America
+
 def show_top10_NA():
     retries = 5
     while True:
@@ -33,16 +39,33 @@ def show_top10_NA():
             retries -= 1
             time.sleep(0.5)
 
-
+#Match Product ID to Product Name
 def show_NA_DDB():
-    list_today_NA_DDB = []
-    i = 0
-    while i < len(top10_NA):
-        resp = table.get_item(Key={"id": (top10_NA[i])}, AttributesToGet=["name"])
-        list_NA_DDB.append(resp['Item'])
-        i = i + 1
-        return list_NA_DDB
+    retries = 5
+    while True:
+        try:
+            list1 = r.zrevrange("TopBooks:NorthAmerica:AllTime", 0, 9)
+            return list1
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
 
+def show_NA_DDB2():
+    NA_DDB = show_NA_DDB()
+    NA_DDB_list = [i.replace('"', '') for i in NA_DDB]
+    i = 0
+    list_NA_DDB2 = []
+    while i < len(NA_DDB):
+        resp = table.get_item(Key={"id": (NA_DDB_list[i])}, AttributesToGet=["name"])
+        list_NA_DDB2.append(resp['Item'])
+        i = i + 1
+        if i == len(NA_DDB):
+            return list_NA_DDB2
+
+
+#TOP 10 All Time Europe
 def show_top10_EU():
     retries = 5
     while True:
@@ -55,6 +78,33 @@ def show_top10_EU():
             retries -= 1
             time.sleep(0.5)
 
+#Match Product ID to Product Name
+def show_EU_DDB():
+    retries = 5
+    while True:
+        try:
+            list1 = r.zrevrange("TopBooks:Europe:AllTime", 0, 9)
+            return list1
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
+
+def show_EU_DDB2():
+    EU_DDB = show_EU_DDB()
+    EU_DDB_list = [i.replace('"', '') for i in EU_DDB]
+    i = 0
+    list_EU_DDB2 = []
+    while i < len(EU_DDB):
+        resp = table.get_item(Key={"id": (EU_DDB_list[i])}, AttributesToGet=["name"])
+        list_EU_DDB2.append(resp['Item'])
+        i = i + 1
+        if i == len(EU_DDB):
+            return list_EU_DDB2
+
+
+#TOP 10 All Time Global
 def show_top10_all():
     retries = 5
     while True:
@@ -68,8 +118,33 @@ def show_top10_all():
             retries -= 1
             time.sleep(0.5)
 
+#Match Product ID to Product Name
+def show_ALL_DDB():
+    retries = 5
+    while True:
+        try:
+            list1 = r.zrevrange("TopBooks:AllTime", 0, 9)
+            return list1
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
+
+def show_ALL_DDB2():
+    ALL_DDB = show_ALL_DDB()
+    ALL_DDB_list = [i.replace('"', '') for i in ALL_DDB]
+    i = 0
+    list_ALL_DDB2 = []
+    while i < len(ALL_DDB):
+        resp = table.get_item(Key={"id": (ALL_DDB_list[i])}, AttributesToGet=["name"])
+        list_ALL_DDB2.append(resp['Item'])
+        i = i + 1
+        if i == len(ALL_DDB):
+            return list_ALL_DDB2
 
 
+#TOP 10Today North America
 def show_today_NA():
     retries = 5
     while True:
@@ -82,6 +157,33 @@ def show_today_NA():
             retries -= 1
             time.sleep(0.5)
 
+#Match Product ID to Product Name
+def show_NA_TODAY_DDB():
+    retries = 5
+    while True:
+        try:
+            list1 = r.zrevrange("TopBooks:NorthAmerica:Today", 0, 9)
+            return list1
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
+
+def show_NA_TODAY_DDB2():
+    NA_TODAY_DDB = show_NA_TODAY_DDB()
+    NA_TODAY_DDB_list = [i.replace('"', '') for i in NA_TODAY_DDB]
+    i = 0
+    list_NA_TODAY_DDB2 = []
+    while i < len(NA_TODAY_DDB):
+        resp = table.get_item(Key={"id": (NA_TODAY_DDB_list[i])}, AttributesToGet=["name"])
+        list_NA_TODAY_DDB2.append(resp['Item'])
+        i = i + 1
+        if i == len(NA_TODAY_DDB):
+            return list_NA_TODAY_DDB2
+
+
+#TOP 10 Today Europe
 def show_today_EU():
     retries = 5
     while True:
@@ -94,6 +196,32 @@ def show_today_EU():
             retries -= 1
             time.sleep(0.5)
 
+#Match Product ID to Product Name
+def show_EU_TODAY_DDB():
+    retries = 5
+    while True:
+        try:
+            list1 = r.zrevrange("TopBooks:Europe:Today", 0, 9)
+            return list1
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
+
+def show_EU_TODAY_DDB2():
+    EU_TODAY_DDB = show_EU_TODAY_DDB()
+    EU_TODAY_DDB_list = [i.replace('"', '') for i in EU_TODAY_DDB]
+    i = 0
+    list_EU_TODAY_DDB2 = []
+    while i < len(EU_TODAY_DDB):
+        resp = table.get_item(Key={"id": (EU_TODAY_DDB_list[i])}, AttributesToGet=["name"])
+        list_EU_TODAY_DDB2.append(resp['Item'])
+        i = i + 1
+        if i == len(EU_TODAY_DDB):
+            return list_EU_TODAY_DDB2
+
+#TOP 10 Today Global
 def show_today_all():
     retries = 5
     while True:
@@ -106,8 +234,30 @@ def show_today_all():
             retries -= 1
             time.sleep(0.5)
 
+#Match Product ID to Product Name
+def show_ALL_TODAY_DDB():
+    retries = 5
+    while True:
+        try:
+            list1 = r.zrevrange("TopBooks:Today", 0, 9)
+            return list1
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
 
-        
+def show_ALL_TODAY_DDB2():
+    ALL_TODAY_DDB = show_ALL_TODAY_DDB()
+    ALL_TODAY_DDB_list = [i.replace('"', '') for i in ALL_TODAY_DDB]
+    i = 0
+    list_ALL_TODAY_DDB2 = []
+    while i < len(ALL_TODAY_DDB):
+        resp = table.get_item(Key={"id": (ALL_TODAY_DDB_list[i])}, AttributesToGet=["name"])
+        list_ALL_TODAY_DDB2.append(resp['Item'])
+        i = i + 1
+        if i == len(ALL_TODAY_DDB):
+            return list_ALL_TODAY_DDB2
 
 
 app = Flask(__name__)
@@ -124,8 +274,19 @@ def index():
     today_all = show_today_all()
 
     NA_DDB = show_NA_DDB()
+    NA_DDB2 = show_NA_DDB2()
 
-    return render_template("index.html", title="Dashboard", count=count,top10_EU=top10_EU, top10_NA =top10_NA, top10_all=top10_all, today_NA=today_NA, today_EU=today_EU, today_all=today_all, NA_DDB=NA_DDB, len_NA_DDB = len(NA_DDB), len_NA = len(top10_NA), len_EU = len(top10_EU), len_all = len(top10_all), len_today_NA = len(today_NA), len_today_EU = len(today_EU), len_today_all = len(today_all),)
+    EU_DDB = show_EU_DDB()
+    EU_DDB2 = show_EU_DDB2()
+
+    ALL_DDB2 = show_ALL_DDB2()
+
+    NA_TODAY_DDB2 = show_NA_TODAY_DDB2()
+    EU_TODAY_DDB2 = show_EU_TODAY_DDB2()
+    ALL_TODAY_DDB2 = show_ALL_TODAY_DDB2()
+
+
+    return render_template("index.html", title="Dashboard", count=count,top10_EU=top10_EU, NA_DDB=NA_DDB, ALL_DDB2=ALL_DDB2, EU_DDB=EU_DDB, EU_DDB2 = EU_DDB2, top10_NA=top10_NA, top10_all=top10_all, today_NA=today_NA, today_EU=today_EU, NA_TODAY_DDB2=NA_TODAY_DDB2, ALL_TODAY_DDB2=ALL_TODAY_DDB2, EU_TODAY_DDB2=EU_TODAY_DDB2, today_all=today_all, NA_DDB2=NA_DDB2, len_NA=len(top10_NA), len_EU=len(top10_EU), len_NA_DDB=len(NA_DDB), len_EU_DDB=len(EU_DDB), len_NA_DDB2=len(NA_DDB2), len_EU_DDB2=len(EU_DDB2), len_all=len(top10_all), len_today_NA=len(today_NA), len_today_EU=len(today_EU), len_today_all=len(today_all),)
 
 @app.after_request
 def add_header(response):

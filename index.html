@@ -25,15 +25,15 @@
       h1 {color: rgb(226, 134, 12);}
       h2 {color: rgb(226, 134, 12);}
 
-      hr {background-color: rgb(226, 134, 12);border-width:0; color: rgb(226, 134, 12);height: 3px; max-width: 700px;margin: 0px;}
+      hr {background-color: rgb(226, 134, 12);border-width:0; color: rgb(226, 134, 12);height: 3px; max-width: 900px;margin: 0px;}
 
   </style> 
     <body>
-      <a href="http://dashboard.octank.ab3.live/"><img src="./static/octank.png" style="max-width: 700px;"></a>
+      <a href="http://dashboard.octank.ab3.live/"><img src="./static/octank.png" style="max-width: 900px;"></a>
       <br>
 
       <hr>
-	    <h2><b>[ALL TIME] Trends On OcTank Store</b></h2>
+	    <h2><b><font color="#696969">[ALL TIME]</font> Trends On OcTank Store</b></h2>
       <hr>
     <!-- Tab links -->
 <div class="tab">
@@ -45,8 +45,8 @@
   
   <!-- Tab content -->
  <div id="top_10_NA" class="tabcontent">
-    <h4>Top Selling Products</h4>
-    <table style="margin-left: 20px;"> 
+  <h4><font color="#696969">Top Selling Products</font></h4>
+    <table style=""> 
       <!-- Table headers -->
           <th> 
             <tr>     
@@ -61,24 +61,23 @@
       <!-- table rows -->
       <tr> 
           <td>{{i+1}}</td> 
-          <td>{{top10_NA[i]}}</td> 
-          <td>"name of"{{i+1}}</td>
-        
-      {%endfor%} 
-        
+          <td>{{top10_NA[i]}}</td>
+          <td>{{NA_DDB2[i]}}</td>        
+       {%endfor%} 
       </tr> 
       </table> 
   </div>
   
   <div id="top_10_EU" class="tabcontent">
-    <h4>Top Selling Products</h4>
-    <table style="margin-left: 20px;"> 
+    <h4><font color="#696969">Top Selling Products</font></h4>
+    <table style=""> 
       <!-- Table headers -->
           <th> 
             <tr>     
               <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
-              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
-      </tr> 
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td>
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Product Name</td> 
+            </tr> 
           </th> 
             
       <!-- For loop logic of jinja template -->
@@ -87,7 +86,7 @@
       <tr> 
           <td>{{i+1}}</td> 
           <td>{{top10_EU[i]}}</td> 
-        
+          <td>{{EU_DDB2[i]}}</td>
       {%endfor%} 
         
       </tr>  
@@ -95,14 +94,15 @@
   </div>
   
   <div id="top_10_all" class="tabcontent">
-    <h4>Top Selling Products</h4>
-    <table style="margin-left: 20px;"> 
+    <h4><font color="#696969">Top Selling Products</font></h4>
+    <table style=""> 
       <!-- Table headers -->
           <th> 
             <tr>     
               <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
-              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
-      </tr> 
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td>
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Product Name</td> 
+            </tr> 
           </th> 
             
       <!-- For loop logic of jinja template -->
@@ -111,7 +111,7 @@
       <tr> 
           <td>{{i+1}}</td> 
           <td>{{top10_all[i]}}</td> 
-        
+          <td>{{ALL_DDB2[i]}}</td>
       {%endfor%} 
         
       </tr> 
@@ -121,7 +121,7 @@
   <br>
   <hr>
 
-  <h2><b>[DAILY] Trends On OcTank Store</b></h2>
+  <h2><b><font color="#696969">[DAILY]</font> Trends On OcTank Store</b></h2>
   <hr>
   <!-- Tab links -->
 <div class="tab">
@@ -134,23 +134,24 @@
 
 <!-- Tab content -->
 <div id="top_today_NA" class="tabcontent">
-  <h4>Top Selling Products</h4>
-  <table style="margin-left: 20px;"> 
+  <h4><font color="#696969">Top Selling Products</font></h4>
+  <table style=""> 
     <!-- Table headers -->
         <th> 
           <tr>     
             <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
-            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
-    </tr> 
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td>
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Product Name</td>  
+          </tr> 
         </th> 
 
     <!-- For loop logic of jinja template -->
-    {%for i in range(0, len_today_NA)%}       
+    {%for i in range(0, len_today_NA-1)%}       
     <!-- table rows -->
     <tr> 
         <td>{{i+1}}</td> 
-        <td>{{today_NA[i]}}</td> 
-      
+        <td>{{today_NA[i]}}</td>
+        <td>{{NA_TODAY_DDB2[i]}}</td> 
     {%endfor%} 
       
     </tr> 
@@ -158,57 +159,58 @@
 </div>
 
 <div id="top_today_EU" class="tabcontent">
-  <h4>Top Selling Products</h4>
-  <table style="margin-left: 20px;"> 
+  <h4><font color="#696969">Top Selling Products</font></h4>
+  <table style=""> 
     <!-- Table headers -->
         <th> 
           <tr>     
             <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
-            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
-    </tr> 
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td>
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Product Name</td>  
+          </tr> 
         </th> 
           
     <!-- For loop logic of jinja template -->
-    {%for i in range(0, len_today_EU)%} 
+    {%for i in range(0, len_today_EU-1)%} 
     <!-- table rows -->
     <tr> 
         <td>{{i+1}}</td> 
-        <td>{{today_EU[i]}}</td> 
-      
+        <td>{{today_EU[i]}}</td>
+        <td>{{EU_TODAY_DDB2[i]}}</td> 
     {%endfor%} 
-      
     </tr>  
     </table> 
 </div>
 
 <div id="top_today_all" class="tabcontent">
-  <h4>Top Selling Products</h4>
-  <table style="margin-left: 20px;"> 
+  <h4><font color="#696969">Top Selling Products</font></h4>
+  <table style=""> 
     <!-- Table headers -->
         <th> 
           <tr>     
             <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
-            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
-    </tr> 
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td>
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Product Name</td>  
+          </tr> 
         </th> 
           
     <!-- For loop logic of jinja template -->
-    {%for i in range(0, len_today_all)%} 
+    {%for i in range(0, len_today_all-1)%} 
     <!-- table rows -->
     <tr> 
         <td>{{i+1}}</td> 
-        <td>{{today_all[i]}}</td> 
-      
+        <td>{{today_all[i]}}</td>
+        <td>{{ALL_TODAY_DDB2[i]}}</td> 
     {%endfor%} 
-      
     </tr> 
     </table> 
 </div>
 <br>
 <br>
-
 <br>
+<hr>
 <p style="color:rgb(226, 134, 12)"><b>Hits {{count}}</b></p>
+<hr>
    </body>
 </html>
 
