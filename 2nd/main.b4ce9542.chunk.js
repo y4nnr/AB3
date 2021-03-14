@@ -400,21 +400,7 @@
                                 className: "btn btn-black btn-black-center",
                                 type: "button",
                                 onClick: this.onViewReceipt
-                            }, "View Receipt")), r.a.createElement("div", {
-                                className: "no-margin-top no-padding"
-                            }, r.a.createElement("a", {
-                                href: "/best"
-                            }, r.a.createElement("img", {
-                                src: T.a,
-                                alt: "Best sellers",
-                                className: "checkout-img no-padding"
-                            })), r.a.createElement("a", {
-                                href: "/past"
-                            }, r.a.createElement("img", {
-                                src: V.a,
-                                alt: "Past orders",
-                                className: "checkout-img no-padding"
-                            })))))
+                            }, "View Receipt")),))
                         }
                     }]), a
                 }(n.Component)),
@@ -1700,21 +1686,7 @@
                                         key: e.bookId
                                     })
                                 })))
-                            })), r.a.createElement("div", {
-                                className: "well-bs no-margin-top no-padding col-md-12"
-                            }, r.a.createElement("a", {
-                                href: "/best"
-                            }, r.a.createElement("img", {
-                                src: T.a,
-                                alt: "Best sellers",
-                                className: "checkout-img no-padding"
-                            })), r.a.createElement("a", {
-                                href: "/cart"
-                            }, r.a.createElement("img", {
-                                src: K.a,
-                                alt: "Shopping cart",
-                                className: "checkout-img no-padding"
-                            })))))
+                            })),))
                         }
                     }]), a
                 }(n.Component),

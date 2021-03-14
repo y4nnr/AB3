@@ -347,21 +347,7 @@
                         className: "btn btn-black btn-black-center",
                         type: "button",
                         onClick: this.onViewReceipt
-                    }, "View Receipt")), s.a.createElement("div", {
-                        className: "no-margin-top no-padding"
-                    }, s.a.createElement("a", {
-                        href: "/best"
-                    }, s.a.createElement("img", {
-                        src: Q.a,
-                        alt: "Best sellers",
-                        className: "checkout-img no-padding"
-                    })), s.a.createElement("a", {
-                        href: "/past"
-                    }, s.a.createElement("img", {
-                        src: W.a,
-                        alt: "Past orders",
-                        className: "checkout-img no-padding"
-                    })))))
+                    }, "View Receipt")),))
                 }
             }
             var T = a(176),
@@ -1432,21 +1418,7 @@
                     }, s.a.createElement("h4", null, "Order date: ".concat(this.getPrettyDate(e.orderDate))), e.books.map(e => s.a.createElement(ct, {
                         order: e,
                         key: e.bookId
-                    })))), s.a.createElement("div", {
-                        className: "well-bs no-margin-top no-padding col-md-12"
-                    }, s.a.createElement("a", {
-                        href: "/best"
-                    }, s.a.createElement("img", {
-                        src: Q.a,
-                        alt: "Best sellers",
-                        className: "checkout-img no-padding"
-                    })), s.a.createElement("a", {
-                        href: "/cart"
-                    }, s.a.createElement("img", {
-                        src: G.a,
-                        alt: "Shopping cart",
-                        className: "checkout-img no-padding"
-                    })))))
+                    })))),))
                 }
             }
             class lt extends s.a.Component {

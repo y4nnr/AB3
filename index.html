@@ -1,0 +1,214 @@
+<html>
+    <head>
+      <script src="{{url_for('static', filename='script.js')}}"></script>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      <title>Dashboard</title>
+    </head>
+    <style type="text/css"> 
+    body {
+    background-color: white;
+}
+      th:tr{ 
+          color: orange; 
+    
+      } 
+      tr:nth-of-type(2n){ 
+          border: 1px solid black; 
+          background-color: rgba(196, 196, 196, 0.5); 
+    
+      } 
+    
+      td{ 
+          padding: 8px 8px; 
+          border: 1px solid black; 
+      } 
+      h1 {color: rgb(226, 134, 12);}
+      h2 {color: rgb(226, 134, 12);}
+
+      hr {background-color: rgb(226, 134, 12);border-width:0; color: rgb(226, 134, 12);height: 3px; max-width: 700px;margin: 0px;}
+
+  </style> 
+    <body>
+      <a href="http://dashboard.octank.ab3.live/"><img src="./static/octank.png" style="max-width: 700px;"></a>
+      <br>
+
+      <hr>
+	    <h2><b>[ALL TIME] Trends On OcTank Store</b></h2>
+      <hr>
+    <!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'top_10_NA')">NORTH AMERICA</button>
+    <button class="tablinks" onclick="openCity(event, 'top_10_EU')">EUROPE</button>
+    <button class="tablinks" onclick="openCity(event, 'top_10_all')">WORLDWIDE</button>
+    <button class="tablinks" onclick="location.reload(true);">REFRESH</button>
+  </div>
+  
+  <!-- Tab content -->
+ <div id="top_10_NA" class="tabcontent">
+    <h4>Top Selling Products</h4>
+    <table style="margin-left: 20px;"> 
+      <!-- Table headers -->
+          <th> 
+            <tr>     
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td>
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Product Name</td> 
+            </tr> 
+          </th> 
+            
+      <!-- For loop logic of jinja template -->
+      {%for i in range(0, len_NA)%}       
+      <!-- table rows -->
+      <tr> 
+          <td>{{i+1}}</td> 
+          <td>{{top10_NA[i]}}</td> 
+          <td>"name of"{{i+1}}</td>
+        
+      {%endfor%} 
+        
+      </tr> 
+      </table> 
+  </div>
+  
+  <div id="top_10_EU" class="tabcontent">
+    <h4>Top Selling Products</h4>
+    <table style="margin-left: 20px;"> 
+      <!-- Table headers -->
+          <th> 
+            <tr>     
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
+      </tr> 
+          </th> 
+            
+      <!-- For loop logic of jinja template -->
+      {%for i in range(0, len_EU)%} 
+      <!-- table rows -->
+      <tr> 
+          <td>{{i+1}}</td> 
+          <td>{{top10_EU[i]}}</td> 
+        
+      {%endfor%} 
+        
+      </tr>  
+      </table> 
+  </div>
+  
+  <div id="top_10_all" class="tabcontent">
+    <h4>Top Selling Products</h4>
+    <table style="margin-left: 20px;"> 
+      <!-- Table headers -->
+          <th> 
+            <tr>     
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
+              <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
+      </tr> 
+          </th> 
+            
+      <!-- For loop logic of jinja template -->
+      {%for i in range(0, len_all)%} 
+      <!-- table rows -->
+      <tr> 
+          <td>{{i+1}}</td> 
+          <td>{{top10_all[i]}}</td> 
+        
+      {%endfor%} 
+        
+      </tr> 
+      </table> 
+  </div>
+  <br>
+  <br>
+  <hr>
+
+  <h2><b>[DAILY] Trends On OcTank Store</b></h2>
+  <hr>
+  <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'top_today_NA')">NORTH AMERICA</button>
+  <button class="tablinks" onclick="openCity(event, 'top_today_EU')">EUROPE</button>
+  <button class="tablinks" onclick="openCity(event, 'top_today_all')">WORLDWIDE</button>
+  <button class="tablinks" onclick="location.reload(true);">REFRESH</button>
+
+</div>
+
+<!-- Tab content -->
+<div id="top_today_NA" class="tabcontent">
+  <h4>Top Selling Products</h4>
+  <table style="margin-left: 20px;"> 
+    <!-- Table headers -->
+        <th> 
+          <tr>     
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
+    </tr> 
+        </th> 
+
+    <!-- For loop logic of jinja template -->
+    {%for i in range(0, len_today_NA)%}       
+    <!-- table rows -->
+    <tr> 
+        <td>{{i+1}}</td> 
+        <td>{{today_NA[i]}}</td> 
+      
+    {%endfor%} 
+      
+    </tr> 
+    </table> 
+</div>
+
+<div id="top_today_EU" class="tabcontent">
+  <h4>Top Selling Products</h4>
+  <table style="margin-left: 20px;"> 
+    <!-- Table headers -->
+        <th> 
+          <tr>     
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
+    </tr> 
+        </th> 
+          
+    <!-- For loop logic of jinja template -->
+    {%for i in range(0, len_today_EU)%} 
+    <!-- table rows -->
+    <tr> 
+        <td>{{i+1}}</td> 
+        <td>{{today_EU[i]}}</td> 
+      
+    {%endfor%} 
+      
+    </tr>  
+    </table> 
+</div>
+
+<div id="top_today_all" class="tabcontent">
+  <h4>Top Selling Products</h4>
+  <table style="margin-left: 20px;"> 
+    <!-- Table headers -->
+        <th> 
+          <tr>     
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">Rank</td> 
+            <td tr style="color: rgb(255, 255, 255); background-color: rgb(226, 134, 12)">ProductID</td> 
+    </tr> 
+        </th> 
+          
+    <!-- For loop logic of jinja template -->
+    {%for i in range(0, len_today_all)%} 
+    <!-- table rows -->
+    <tr> 
+        <td>{{i+1}}</td> 
+        <td>{{today_all[i]}}</td> 
+      
+    {%endfor%} 
+      
+    </tr> 
+    </table> 
+</div>
+<br>
+<br>
+
+<br>
+<p style="color:rgb(226, 134, 12)"><b>Hits {{count}}</b></p>
+   </body>
+</html>
+
