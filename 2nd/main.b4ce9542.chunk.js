@@ -341,7 +341,7 @@
                                 className: "btn btn-black",
                                 type: "button",
                                 onClick: this.onCheckout
-                            }, "Pay ($".concat(this.getOrderTotal(), ")"))))
+                            }, "Pay (€".concat(this.getOrderTotal(), ")"))))
                         }
                     }]), a
                 }(r.a.Component),
@@ -566,7 +566,7 @@
                                 stars: this.props.book.rating1
                             }), r.a.createElement("span", {
                                 className: "pull-right"
-                            }, "$".concat(this.props.book.price))), r.a.createElement("img", {
+                            }, "€".concat(this.props.book.price))), r.a.createElement("img", {
                                 src: this.props.book.cover,
                                 alt: "".concat(this.props.book.name, " cover")
                             }), r.a.createElement("div", {
@@ -767,7 +767,7 @@
                                 className: "media-heading"
                             }, this.state.book.name, r.a.createElement("small", {
                                 className: "pull-right "
-                            }, "$", this.state.book.price)), r.a.createElement("p", {
+                            }, "€", this.state.book.price)), r.a.createElement("p", {
                                 className: "no-margin"
                             }, r.a.createElement("small", null, this.state.book.category)), r.a.createElement(xe, {
                                 bookId: this.props.bookId
@@ -1390,7 +1390,7 @@
                                 className: "media-heading"
                             }, this.state.book.name, r.a.createElement("div", {
                                 className: "pull-right margin-1"
-                            }, r.a.createElement("small", null, "$", this.state.book.price))), r.a.createElement("p", null, r.a.createElement("small", null, this.state.book.category)), r.a.createElement(xe, {
+                            }, r.a.createElement("small", null, "€", this.state.book.price))), r.a.createElement("p", null, r.a.createElement("small", null, this.state.book.category)), r.a.createElement(xe, {
                                 bookId: this.props.order.bookId
                             }), r.a.createElement("div", null, "", r.a.createElement("div", {
                                 className: "pull-right"
@@ -1752,7 +1752,7 @@
                                 className: "media-heading"
                             }, this.state.book.name, r.a.createElement("small", {
                                 className: "pull-right margin-1"
-                            }, r.a.createElement("h4", null, "$", this.state.book.price))), r.a.createElement("p", null, r.a.createElement("small", null, this.state.book.category)), r.a.createElement(xe, {
+                            }, r.a.createElement("h4", null, "€", this.state.book.price))), r.a.createElement("p", null, r.a.createElement("small", null, this.state.book.category)), r.a.createElement(xe, {
                                 bookId: this.props.bookId
                             }), r.a.createElement("div", null, "", r.a.createElement(pe, {
                                 bookId: this.props.bookId,
